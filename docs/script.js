@@ -1,21 +1,70 @@
 
-const endpoint = 'https://api.unsplash.com/photos/?client_id=hOdAX1uTd3b796ejWX9-v75E1QCeVkHRMeSNRghWUYo' //'https://api.chucknorris.io/jokes/random'
-const endpoint2 = 'https://api.thecatapi.com/v1/images/search'
-content = document.getElementById('content')
+const endpointGatos = 'https://api.thecatapi.com/v1/images/search'
+const endpointUser = 'https://dummyjson.com/users'
+const endpointComment = 'https://dummyjson.com/posts'
 
-/*fetch(endpoint)
+const content = document.getElementById('content')
+let celdas = ['celda1', 'celda2', 'celda3', 'celda4', 'celda5', 'celda6', 'celda7', 'celda8', 'celda9', 'celda10',
+'celda11', 'celda12', 'celda13', 'celda14', 'celda15', 'celda16', 'celda17', 'celda18']
+const usuario = document.getElementById('usuario')
+const text = document.getElementById('text')
+
+getPrincipal()
+getImage(celdas)
+getUser()
+//getComment()
+
+
+function getImage(array)
+{
+    if(array.length > 0)
+    {
+        let elemento = array.pop()
+        let celda = document.getElementById(elemento)
+        fetch(endpointGatos)
+        .then((response)=>response.json())
+        .then((info)=>
+        {
+            let imagen = info[0].url
+            celda.innerHTML = `<img src="${imagen}" alt="gato" height="200px">`
+            getImage(array)
+        })
+    }
+}
+function getPrincipal()
+{
+    fetch(endpointGatos)
     .then((response)=>response.json())
     .then((info)=>
     {
-        const frase = info.map((element)=>{"hola"})
-        console.log(frase)
-        content.innerHTML = `<div>${frase}</div>`
-    })*/
+        const imagen = info[0].url
+        content.innerHTML = `<img src="${imagen}" alt="gato" height="300px">`
+    })
+}
 
-fetch(endpoint2)
-.then((response)=>response.json())
-.then((info)=>
+function getUser()
 {
-    const imagen = info[0].url
-    content.innerHTML = `<img src="${imagen}" alt="gato" height="600px">`
-})
+    fetch(endpointUser)
+    .then((response)=>response.json())
+    .then((info)=>
+    {
+        let num = Math.floor(Math.random()*30)
+        const nombre = info.users[num].firstName
+        const apellido = info.users[num].lastName
+        usuario.innerHTML = `<p>${nombre} ${apellido}</p>`
+    })
+}
+
+function getComment()
+{
+    fetch(endpointComment)
+    .then((response)=>response.json())
+    .then((info)=>
+    {
+        let num = Math.floor(Math.random()*30)
+        const txt = info.posts[num].body
+        text.innerHTML = `<p id="puto">${txt}</p>`
+    })
+}
+
+//Math.floor(Math.random()*10)

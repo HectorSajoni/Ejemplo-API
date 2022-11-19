@@ -10,9 +10,9 @@ const usuario = document.getElementById('usuario')
 const text = document.getElementById('text')
 
 getPrincipal()
-getImage(celdas)
 getUser()
-//getComment()
+getComment()
+getImage(celdas)
 
 
 function getImage(array)
@@ -38,7 +38,7 @@ function getPrincipal()
     .then((info)=>
     {
         const imagen = info[0].url
-        content.innerHTML = `<img src="${imagen}" alt="gato" height="300px">`
+        content.innerHTML = `<img src="${imagen}" alt="gato" width="500px">`
     })
 }
 
@@ -63,8 +63,13 @@ function getComment()
     {
         let num = Math.floor(Math.random()*30)
         const txt = info.posts[num].body
-        text.innerHTML = `<p id="puto">${txt}</p>`
+        text.innerHTML = `<p>${txt}</p>`
     })
 }
 
-//Math.floor(Math.random()*10)
+function getAll()
+{
+    getPrincipal()
+    getUser()
+    getComment()
+}

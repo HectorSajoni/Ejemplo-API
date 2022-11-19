@@ -22,13 +22,16 @@ p#logo
 }
 main
 {
-    padding-left: 8%;
-    padding-right: 8%;
+    padding-left: 10%;
+    padding-right: 10%;
 }
 div#content
 {
     display: flex;
+    align-items: center;
     justify-content: center;
+    justify-content: left;
+    
 }
 .tabla
 {
@@ -40,8 +43,8 @@ div#content
 .principal
 {
     display: flex;
-    max-width: min-content;
     min-width: max-content;
+    max-width: min-content;
     border-radius: 5px;
     border: solid black;
     border-width: 5px;
@@ -49,6 +52,7 @@ div#content
 .content
 {
     display: inline-block;
+    text-align: left;
 }
 .content-header
 {
@@ -64,14 +68,27 @@ div#content
 }
 #imgUser
 {
-    line-height: 0px;
     transform: translate(0%, 25%);
 }
 hr
 {
     width: 80%;
 }
-#puto
+#text
 {
-    word-break: break-all;
+    max-width: 500px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-family:Verdana, Geneva, Tahoma, sans-serif;
+}
+button
+{
+    border-width: 0;
+    background-color:bisque;
+    border-radius: 15px;
+    font-size: large;
+    width: 150px;
+    height: 50px;
+    margin: 80px;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
 }

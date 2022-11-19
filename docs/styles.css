@@ -31,13 +31,14 @@ div#content
     align-items: center;
     justify-content: center;
     justify-content: left;
+    background-color: black;
     
 }
 .tabla
 {
     display: flex;
     flex-wrap: wrap;
-    justify-content: space-between;
+    justify-content: space-evenly;
     margin: 20px;
 }
 .principal
@@ -80,15 +81,38 @@ hr
     padding-left: 30px;
     padding-right: 30px;
     font-family:Verdana, Geneva, Tahoma, sans-serif;
+    font-weight: 100;
 }
-button
+.siguiente
 {
     border-width: 0;
     background-color:bisque;
-    border-radius: 15px;
+    border-radius: 30px;
     font-size: large;
     width: 150px;
     height: 50px;
-    margin: 80px;
+    margin: 40px;
     font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+}
+.siguiente:hover
+{
+    transition: background-color .2s;
+    background-color: white;
+    border-width: 1px;
+    border-color: solid black;
+    cursor: pointer;
+}
+.img-relleno:hover
+{
+    transform: scale(1.1);
+}
+.corazon
+{
+    margin-left: 20px;
+    border-width: 0;
+    background-color: white;
+}
+.img-corazon
+{
+    cursor: pointer;
 }

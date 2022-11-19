@@ -26,7 +26,7 @@ function getImage(array)
         .then((info)=>
         {
             let imagen = info[0].url
-            celda.innerHTML = `<img src="${imagen}" alt="gato" height="200px">`
+            celda.innerHTML = `<img src="${imagen}" alt="gato" height="200px" class="img-relleno">`
             getImage(array)
         })
     }
@@ -69,7 +69,24 @@ function getComment()
 
 function getAll()
 {
+    const corazon = document.getElementById('corazon')
     getPrincipal()
     getUser()
     getComment()
+    corazon.innerHTML = `<img src="https://i.pinimg.com/originals/f5/87/95/f58795d40b762a85abe1c461be485071.png" alt="" width="30px" class="img-corazon"></img>`
+    corazon.value = "hueco"
+}
+
+function cambiarCorazon()
+{
+    const corazon = document.getElementById('corazon')
+    if(corazon.value=="hueco")
+    {
+        corazon.innerHTML = `<img src="https://cdn.pixabay.com/photo/2014/04/02/10/44/heart-304420_960_720.png" alt="" width="30px" class="img-corazon"></img>`
+        corazon.value = "lleno"
+    }else
+    {
+        corazon.innerHTML = `<img src="https://i.pinimg.com/originals/f5/87/95/f58795d40b762a85abe1c461be485071.png" alt="" width="30px" class="img-corazon"></img>`
+        corazon.value = "hueco"
+    }
 }

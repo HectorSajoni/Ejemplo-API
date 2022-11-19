@@ -38,7 +38,7 @@ function getPrincipal()
     .then((info)=>
     {
         const imagen = info[0].url
-        content.innerHTML = `<img src="${imagen}" alt="gato" width="500px">`
+        content.innerHTML = `<img src="${imagen}" alt="gato" width="400px">`
     })
 }
 
